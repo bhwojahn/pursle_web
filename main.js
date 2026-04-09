@@ -63,7 +63,9 @@
       var el = doc.elementFromPoint(e.clientX, e.clientY);
       var section = el && el.closest('[data-cursor]');
       var light = section && section.getAttribute('data-cursor') === 'light';
+      var interactive = el && (el.closest('a') || el.closest('button') || el.closest('[role="button"]') || el.closest('input') || el.closest('textarea') || el.closest('select'));
       cursor.classList.toggle('is-light', !!light);
+      cursor.classList.toggle('is-hover', !!interactive);
     },
     { passive: true }
   );

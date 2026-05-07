@@ -1,0 +1,635 @@
+/* =========================
+   HERO SECTION
+========================= */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BACKGROUND LAYER */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at var(--x1, 50%) var(--y1, 50%),
+      rgba(45, 31, 110, 0.7),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at var(--x2, 50%) var(--y2, 50%),
+      rgba(45, 31, 110, 0.4),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      var(--deep),
+      var(--deep)
+    );
+
+  filter: blur(40px);
+  transition: background 0.2s ease;
+  z-index: 0;
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* BUTTON GROUP */
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* FADE OVERLAY */
+.hero-fade {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30vh;
+
+  background: linear-gradient(
+    to top,
+    var(--deep) 0%,
+    rgba(6, 4, 18, 0.8) 40%,
+    rgba(6, 4, 18, 0.4) 70%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.split .big-number {
+  position: relative;
+  transform: none;
+  top: auto;
+  left: auto;
+}
+
+/* =========================
+   BRAND & OFFERINGS
+========================= */
+.section.split {
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  padding-top: 140px;
+  padding-bottom: 140px;
+  display: flex;
+  align-items: center;
+}
+
+.split-inner {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.split-number {
+  flex-shrink: 0;
+  width: 280px;
+  position: relative;
+  min-height: 300px;
+}
+
+.big-number {
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  transform: translateY(-50%);
+  font-size: clamp(200px, 28vw, 380px);
+  font-weight: 900;
+  font-family: var(--font-main);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.05);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  transition: -webkit-text-stroke 1.2s var(--ease);
+}
+
+.big-number.revealed {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.11);
+}
+
+.split-content {
+  flex: 1;
+  max-width: 640px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- line-by-line reveal --- */
+.reveal-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-line.show .libre {
+  text-shadow: 0 0 40px rgba(45, 31, 110, 0.9);
+}
+
+.context.reveal-line {
+  margin-bottom: 24px;
+}
+
+/* --- self-drawing subline --- */
+.subline {
+  width: 0;
+  height: 1px;
+  background: var(--grit);
+  margin-top: 36px;
+  transition: width 0.9s var(--ease);
+}
+
+.subline.draw {
+  width: 100px;
+}
+
+/* --- service ticker (offerings only) --- */
+.service-ticker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 32px;
+}
+
+.ticker-item {
+  font-size: 0.75rem;
+  color: transparent;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease), color 0.5s var(--ease);
+  white-space: nowrap;
+}
+
+.ticker-item.show {
+  opacity: 1;
+  color: var(--grit);
+  transform: translateY(0);
+}
+
+.ticker-item .sep {
+  margin: 0 10px;
+  opacity: 0.4;
+}
+
+/* --- reverse layout for offerings --- */
+.section.split.reverse .split-inner {
+  flex-direction: row-reverse;
+}
+
+/* --- plum accent line --- */
+.section.split::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 0;
+  background: linear-gradient(to bottom, transparent, rgba(45,31,110,0.6), transparent);
+  transition: height 1.2s var(--ease);
+}
+
+.section.split.active::before {
+  height: 60%;
+}
+
+/* ============================================================
+   SERVICE SECTIONS  (03 – 06)
+   Append to the bottom of css/main.css
+   ============================================================ */
+
+
+/* ── Layout shell ──────────────────────────────────────────── */
+.svc-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 140px 8%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 50%,
+    rgba(45, 31, 110, 0.08) 0%,
+    transparent 70%
+  );
+}
+
+/* Two-column grid */
+.svc-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+}
+
+/* Reversed layout: swap column order */
+.svc-rev .svc-copy   { order: 2; }
+.svc-rev .svc-visual { order: 1; }
+
+/* Copy */
+.svc-heading {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  color: var(--slate);
+}
+
+.svc-heading .libre {
+  text-shadow: 0 0 40px rgba(45, 31, 110, 0.8);
+}
+
+/* Visual panel */
+.svc-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ── Big outlined chapter numeral ──────────────────────────── */
+.svc-num {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  font-size: clamp(160px, 22vw, 320px);
+  font-weight: 900;
+  font-family: var(--font-main);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease),
+              -webkit-text-stroke 1.2s var(--ease);
+}
+
+/* Number on right for reversed sections */
+.svc-rev .svc-num {
+  left: auto;
+  right: 5%;
+}
+
+/* Activated state (added by JS on scroll entry) */
+.svc-section.svc-entered .svc-num {
+  opacity: 1;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.10);
+}
+
+
+/* ── Reveal lines ──────────────────────────────────────────── */
+.svc-reveal {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  margin-bottom: 16px;
+}
+
+.svc-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Self-drawing hairline */
+.svc-subline {
+  width: 0;
+  height: 1px;
+  background: var(--grit);
+  margin-top: 32px;
+  transition: width 0.9s var(--ease);
+}
+
+.svc-subline.draw {
+  width: 100px;
+}
+
+
+/* ── Phone mockup  (Chatbots) ──────────────────────────────── */
+.phone-wrap {
+  position: relative;
+  width: 260px;
+  height: 500px;
+  border-radius: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 12px;
+  box-shadow: 0 30px 80px -20px rgba(45, 31, 110, 0.6);
+  flex-shrink: 0;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.phone-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--deep);
+  border-radius: 32px;
+  padding: 12px;
+  padding-top: 36px;
+}
+
+.chat-hdr {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.chat-ava {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--plum);
+  flex-shrink: 0;
+}
+
+.chat-name   { font-size: 11px; color: var(--slate); }
+.chat-online { font-size: 9px;  color: var(--grit);  }
+
+.chat-msgs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 8px 12px;
+  border-radius: 18px;
+  font-size: 11px;
+  line-height: 1.4;
+  animation: chatPop 0.3s ease-out forwards;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--slate);
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: var(--plum);
+  color: #fff;
+}
+
+/* Typing indicator */
+.chat-typing {
+  display: none;
+  align-self: flex-start;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 10px 14px;
+  margin-top: 4px;
+}
+
+.chat-typing.on { display: flex; }
+
+.chat-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--grit);
+  animation: typeBounce 0.8s ease-in-out infinite;
+}
+
+.chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes chatPop {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+@keyframes typeBounce {
+  0%, 60%, 100% { transform: translateY(0);    }
+  30%           { transform: translateY(-4px); }
+}
+
+
+/* ── Bottleneck pipe  (Consultancy) ────────────────────────── */
+.pipe-svg { width: 100%; }
+
+/* CSS d-attribute transition — Chrome 93+, Firefox 72+, Safari 16+ */
+#pipe-path {
+  transition: d 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#pipe-label {
+  transition: y 0.7s cubic-bezier(0.16, 1, 0.3, 1), fill 0.6s ease;
+  font-size: 11px;
+  font-family: var(--font-main);
+  letter-spacing: 0.12em;
+  text-anchor: middle;
+}
+
+@keyframes pipeFlow {
+  0%   { transform: translateX(-16px); opacity: 0.5; }
+  50%  { opacity: 1; }
+  100% { transform: translateX(16px);  opacity: 0.5; }
+}
+
+
+/* ── Terminal  (Automation) ────────────────────────────────── */
+.terminal {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(45, 31, 110, 0.5);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+}
+
+.term-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tdot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.tdot-r { background: rgba(255, 96,  80,  0.7); }
+.tdot-y { background: rgba(255, 200, 70,  0.7); }
+.tdot-g { background: rgba(70,  200, 110, 0.7); }
+
+.term-path {
+  margin-left: 10px;
+  font-size: 10px;
+  color: var(--grit);
+}
+
+.term-body   { padding: 18px; }
+
+.term-cmd    { color: var(--slate); margin-bottom: 14px; }
+.term-dollar { color: var(--plum);  margin-right: 4px;  }
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--grit);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.task-row.visible { opacity: 1; }
+
+.task-lhs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-icon {
+  width: 14px;
+  color: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+}
+
+.task-row.done .task-icon  { color: #4ade80; }
+.task-row.done .task-label { color: var(--slate); }
+
+.task-time { color: rgba(255, 255, 255, 0.3); }
+
+.term-total {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 12px;
+  min-height: 20px;
+  color: var(--grit);
+}
+
+.term-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 13px;
+  background: var(--slate);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.total-text { color: #4ade80; }
+
+
+/* ── Node graph  (Integration) ─────────────────────────────── */
+.nodes-svg { width: 100%; overflow: visible; }
+
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .svc-section {
+    padding: 100px 6%;
+    min-height: auto;
+  }
+
+  .svc-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  /* restore natural order on mobile */
+  .svc-rev .svc-copy,
+  .svc-rev .svc-visual { order: unset; }
+
+  .svc-num {
+    font-size: clamp(100px, 36vw, 160px);
+    opacity: 0.35 !important;
+  }
+
+  .phone-wrap {
+    width: 220px;
+    height: 420px;
+  }
+
+  .terminal {
+    max-width: 100%;
+    font-size: 11px;
+  }
+
+  .pipe-svg,
+  .nodes-svg { max-width: 360px; }
+}

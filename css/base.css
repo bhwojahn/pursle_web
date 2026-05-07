@@ -1,0 +1,314 @@
+/* =========================
+   1. RESET
+========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   2. ROOT SYSTEM
+========================= */
+:root {
+  /* COLORS */
+  --plum: #2D1F6E;
+  --deep: #060412;
+  --slate: #E8E8EB;
+  --grit: #888892;
+  --forrest: #1A7A1A;
+
+  /* GRADIENTS */
+  --grad-dark: linear-gradient(135deg, var(--deep), var(--plum));
+
+  /* TYPOGRAPHY */
+  --font-main: 'Montserrat', sans-serif;
+  --font-serif: 'Libre Baskerville', serif;
+
+  /* SPACING */
+  --container-width: 1200px;
+  --section-padding: 120px;
+
+  /* TRANSITIONS */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: 0.6s var(--ease);
+}
+
+/* =========================
+   3. BASE
+========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--deep);
+  color: var(--slate);
+  font-family: var(--font-main);
+  text-transform: lowercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   4. TYPOGRAPHY
+========================= */
+h1, h2, h3 {
+  font-family: var(--font-main);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.libre {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.text {
+  font-family: var(--font-serif);
+  color: var(--grit);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.text.large {
+  font-size: 1.2rem;
+}
+
+.context {
+  font-size: 0.8rem;
+  color: var(--grit);
+  margin-bottom: 20px;
+}
+
+/* =========================
+   5. LAYOUT
+========================= */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+section {
+  padding: var(--section-padding) 8%;
+  position: relative;
+}
+
+/* =========================
+   6. NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 8%;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--slate);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.nav-item:hover {
+  opacity: 1;
+}
+
+.nav-item img {
+  height: 40px;
+}
+
+/* =========================
+   7. BUTTON SYSTEM
+========================= */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--slate);
+  color: var(--slate);
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--slate);
+  color: var(--deep);
+}
+
+.btn.primary {
+  border-color: var(--slate);
+}
+
+.btn.secondary {
+  border-color: var(--grit);
+  color: var(--grit);
+}
+
+.btn.secondary:hover {
+  background: var(--grit);
+  color: var(--deep);
+}
+
+/* =========================
+   8. BIG NUMBERS
+========================= */
+.big-number {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  font-size: 260px;
+  font-weight: 900;
+  font-family: var(--font-main);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+/* =========================
+   9. DIVIDERS
+========================= */
+.subline {
+  width: 100px;
+  height: 1px;
+  background: var(--grit);
+  margin-top: 30px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 40px 0;
+}
+
+/* =========================
+   10. GRID SYSTEM
+========================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* =========================
+   11. PROCESS BLOCKS
+========================= */
+.step span {
+  font-size: 0.9rem;
+  color: var(--grit);
+}
+
+.step h3 {
+  margin: 10px 0;
+}
+
+/* =========================
+   12. FOOTER
+========================= */
+.footer {
+  padding: 80px 8%;
+}
+
+.footer-text {
+  margin-bottom: 40px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-title {
+  font-family: var(--font-main);
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: block;
+  color: var(--grit);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.sub-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--grit);
+}
+
+/* =========================
+   13. FORM
+========================= */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.form input,
+.form textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--grit);
+  padding: 10px 0;
+  color: var(--slate);
+  font-family: var(--font-main);
+}
+
+.form textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+/* =========================
+   14. ANIMATIONS
+========================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: var(--transition);
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -47,59 +47,275 @@
   </div>
 </section>
 
-<!-- BRAND -->
-<section class="section split" id="brand">
-  <div class="container split-inner">
+    <!-- BRAND -->
+<section class="brand-orbit-section" id="brand">
 
-    <div class="split-number">
-      <p class="big-number">01</p>
-    </div>
+  <div class="orbit-bg"></div>
 
-    <div class="split-content">
-      <p class="context">//the brand</p>
+  <div class="container orbit-container">
 
-      <p class="text large">
-        we don't replace what's working. we collaborate with it,
+    <!-- ORBIT SVG -->
+    <svg
+      class="orbit-svg"
+      viewBox="0 0 1200 620"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+
+      <!-- =========================================
+           GRADIENT DEFINITIONS
+      ========================================= -->
+      <defs>
+
+        <!-- TOP LEFT -->
+        <linearGradient
+          id="orbitGradient1"
+          x1="240"
+          y1="180"
+          x2="340"
+          y2="120"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stop-color="#d9ccff" stop-opacity="0" />
+          <stop offset="20%" stop-color="#d9ccff" stop-opacity="0.15" />
+          <stop offset="50%" stop-color="#d9ccff" stop-opacity="1" />
+          <stop offset="80%" stop-color="#d9ccff" stop-opacity="0.15" />
+          <stop offset="100%" stop-color="#d9ccff" stop-opacity="0" />
+        </linearGradient>
+
+        <!-- TOP RIGHT -->
+        <linearGradient
+          id="orbitGradient2"
+          x1="860"
+          y1="120"
+          x2="960"
+          y2="180"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stop-color="#d9ccff" stop-opacity="0" />
+          <stop offset="20%" stop-color="#d9ccff" stop-opacity="0.15" />
+          <stop offset="50%" stop-color="#d9ccff" stop-opacity="1" />
+          <stop offset="80%" stop-color="#d9ccff" stop-opacity="0.15" />
+          <stop offset="100%" stop-color="#d9ccff" stop-opacity="0" />
+        </linearGradient>
+
+        <!-- BOTTOM RIGHT -->
+        <linearGradient
+          id="orbitGradient3"
+          x1="960"
+          y1="440"
+          x2="860"
+          y2="510"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stop-color="#d9ccff" stop-opacity="0" />
+          <stop offset="20%" stop-color="#d9ccff" stop-opacity="0.15" />
+          <stop offset="50%" stop-color="#d9ccff" stop-opacity="1" />
+          <stop offset="80%" stop-color="#d9ccff" stop-opacity="0.15" />
+          <stop offset="100%" stop-color="#d9ccff" stop-opacity="0" />
+        </linearGradient>
+
+        <!-- BOTTOM LEFT -->
+        <linearGradient
+          id="orbitGradient4"
+          x1="340"
+          y1="510"
+          x2="240"
+          y2="440"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stop-color="#d9ccff" stop-opacity="0" />
+          <stop offset="20%" stop-color="#d9ccff" stop-opacity="0.15" />
+          <stop offset="50%" stop-color="#d9ccff" stop-opacity="1" />
+          <stop offset="80%" stop-color="#d9ccff" stop-opacity="0.15" />
+          <stop offset="100%" stop-color="#d9ccff" stop-opacity="0" />
+        </linearGradient>
+
+      </defs>
+
+      <!-- MAIN ELLIPSE -->
+      <ellipse
+        class="orbit-path"
+        cx="600"
+        cy="310"
+        rx="430"
+        ry="245"
+      />
+
+      <!-- =========================================
+           GLOW SEGMENTS
+      ========================================= -->
+
+      <!-- TOP LEFT -->
+      <path
+        class="orbit-glow-segment orbit-glow-1"
+        d="M 250 170 A 430 245 0 0 1 320 125"
+        stroke="url(#orbitGradient1)"
+      />
+
+      <!-- TOP RIGHT -->
+      <path
+        class="orbit-glow-segment orbit-glow-2"
+        d="M 880 125 A 430 245 0 0 1 950 170"
+        stroke="url(#orbitGradient2)"
+      />
+
+      <!-- BOTTOM RIGHT -->
+      <path
+        class="orbit-glow-segment orbit-glow-3"
+        d="M 950 450 A 430 245 0 0 1 880 495"
+        stroke="url(#orbitGradient3)"
+      />
+
+      <!-- BOTTOM LEFT -->
+      <path
+        class="orbit-glow-segment orbit-glow-4"
+        d="M 320 495 A 430 245 0 0 1 250 450"
+        stroke="url(#orbitGradient4)"
+      />
+
+    </svg>
+
+    <!-- =========================================
+         CENTER CONTENT
+    ========================================= -->
+    <div class="orbit-center">
+
+      <h2 class="orbit-title">
+        we create systems
+        <br>
+        that carry your
+        <br>
+        team’s <span class="libre">prestige.</span>
+      </h2>
+
+      <div class="orbit-line"></div>
+
+      <p class="orbit-copy">
+        we don’t replace what’s working.
+        <br>
+        we collaborate with it,
         <span class="libre">creating</span> the missing pieces,
-        and leave behind a system that carries your team's
-        <span class="libre">prestige.</span>
+        <br>
+        and leave behind a system that carries your team’s prestige.
       </p>
 
-      <div class="subline"></div>
     </div>
 
-  </div>
-</section>
+    <!-- =========================================
+         CHATBOTS
+    ========================================= -->
+    <div class="orbit-node node-chat">
 
-<!-- OFFERINGS -->
-<section class="section split reverse" id="offerings">
-  <div class="container split-inner">
+      <div class="node-copy">
 
-    <div class="split-number">
-      <p class="big-number">02</p>
-    </div>
+        <svg
+          class="node-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <rect x="3" y="4" width="18" height="14" rx="3"></rect>
+          <path d="M8 20L12 16H21"></path>
+        </svg>
 
-    <div class="split-content">
-      <p class="context">//our offerings</p>
+        <h4>chatbots</h4>
 
-      <p class="text large">
-        every engagement is designed to
-        <span class="libre">remove friction</span>,
-        align your systems and create an operation that actually
-        <span class="libre">scales</span>
-      </p>
+        <p>
+          intelligent conversations
+          that convert.
+        </p>
 
-      <div class="service-ticker">
-        <span class="ticker-item">chatbots<span class="sep">·</span></span>
-        <span class="ticker-item">consultancy<span class="sep">·</span></span>
-        <span class="ticker-item">ai. automation<span class="sep">·</span></span>
-        <span class="ticker-item">data integration</span>
       </div>
 
-      <div class="subline"></div>
+    </div>
+
+    <!-- =========================================
+         AI AUTOMATION
+    ========================================= -->
+    <div class="orbit-node node-auto">
+
+      <div class="node-copy">
+
+        <svg
+          class="node-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M13 2L4 14H11L10 22L20 9H13Z"></path>
+        </svg>
+
+        <h4>ai automation</h4>
+
+        <p>
+          automate operations and
+          eliminate manual friction.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- =========================================
+         DATA INTEGRATION
+    ========================================= -->
+    <div class="orbit-node node-data">
+
+      <div class="node-copy">
+
+        <svg
+          class="node-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle cx="6" cy="12" r="2"></circle>
+          <circle cx="18" cy="6" r="2"></circle>
+          <circle cx="18" cy="18" r="2"></circle>
+
+          <path d="M8 12H16"></path>
+          <path d="M16.5 8L7.5 11"></path>
+          <path d="M16.5 16L7.5 13"></path>
+        </svg>
+
+        <h4>data integration</h4>
+
+        <p>
+          unify your tools, data
+          and workflows.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- =========================================
+         CONSULTANCY
+    ========================================= -->
+    <div class="orbit-node node-consult">
+
+      <div class="node-copy">
+
+        <svg
+          class="node-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="8"></circle>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+
+        <h4>consultancy</h4>
+
+        <p>
+          strategy, systems and
+          clarity for scale.
+        </p>
+
+      </div>
+
     </div>
 
   </div>
+
 </section>
 
 <section class="services" id="services">
@@ -216,39 +432,220 @@
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section" id="process">
-  <div class="container">
-    <p class="context">//our process</p>
-    <h2>a four-step <span class="libre">system.</span></h2>
+<!-- PROCESS: tall driver creates scroll room; section stays sticky inside it -->
+<div class="process-driver" id="process">
+  <section class="process-sticky">
 
-    <div class="grid-4">
-      <div class="step">
-        <span>01</span>
-        <h3>discovery</h3>
-        <p>a 90-minute session and system shadowing.</p>
-      </div>
-
-      <div class="step">
-        <span>02</span>
-        <h3>design</h3>
-        <p>smallest intervention. highest leverage.</p>
-      </div>
-
-      <div class="step">
-        <span>03</span>
-        <h3>deploy</h3>
-        <p>built and integrated into your stack.</p>
-      </div>
-
-      <div class="step">
-        <span>04</span>
-        <h3>compound</h3>
-        <p>keeps working without constant input.</p>
-      </div>
+    <!-- header -->
+    <div class="ps-header">
+      <h2 class="ps-title">
+        a four-step system<br>
+        built for <span class="libre">compounding<br>results.</span>
+      </h2>
+      <div class="ps-divider"></div>
+      <p class="ps-copy">
+        autonomous systems that remove operational drag
+        and keep working long after we're done.
+      </p>
     </div>
-  </div>
-</section>
+
+    <!-- step dots -->
+    <div class="ps-indicator">
+      <div class="ps-ind-dot active"></div>
+      <div class="ps-ind-dot"></div>
+      <div class="ps-ind-dot"></div>
+      <div class="ps-ind-dot"></div>
+    </div>
+
+    <!-- cards row -->
+    <div class="ps-track">
+
+      <!-- 01 discovery -->
+      <div class="ps-card active" data-index="0">
+        <div class="psc-narrow">
+          <span class="psc-n">01</span>
+          <span class="psc-vl">discovery</span>
+        </div>
+        <div class="psc-wide">
+          <div class="psc-top">
+            <span class="psc-ghost-num">01</span>
+            <div class="psc-info">
+              <span class="psc-step-lbl">discovery</span>
+              <p class="psc-desc">a 90-minute session and system shadowing.</p>
+            </div>
+          </div>
+          <div class="psc-art">
+            <svg viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="70" y1="105" x2="130" y2="58" stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <line x1="130" y1="58" x2="205" y2="38" stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <line x1="205" y1="38" x2="262" y2="78" stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <line x1="130" y1="58" x2="162" y2="115" stroke="rgba(198,216,255,0.12)" stroke-width="0.8"/>
+              <line x1="70" y1="105" x2="48" y2="58" stroke="rgba(198,216,255,0.1)" stroke-width="0.8"/>
+              <line x1="205" y1="38" x2="162" y2="115" stroke="rgba(198,216,255,0.1)" stroke-width="0.8"/>
+              <circle cx="70" cy="105" r="2.5" fill="rgba(198,216,255,0.4)"/>
+              <circle cx="205" cy="38" r="3" fill="rgba(198,216,255,0.6)"/>
+              <circle cx="262" cy="78" r="2" fill="rgba(198,216,255,0.3)"/>
+              <circle cx="162" cy="115" r="2.5" fill="rgba(198,216,255,0.4)"/>
+              <circle cx="48" cy="58" r="1.5" fill="rgba(198,216,255,0.22)"/>
+              <circle cx="88" cy="22" r="1" fill="rgba(198,216,255,0.18)"/>
+              <circle cx="242" cy="125" r="1" fill="rgba(198,216,255,0.14)"/>
+              <!-- bright hub with pulse -->
+              <circle cx="130" cy="58" r="14" fill="rgba(198,216,255,0.05)">
+                <animate attributeName="r" values="12;18;12" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.2;0.06;0.2" dur="3s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="130" cy="58" r="5" fill="white" opacity="0.9">
+                <animate attributeName="r" values="5;7;5" dur="3s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 design -->
+      <div class="ps-card" data-index="1">
+        <div class="psc-narrow">
+          <span class="psc-n">02</span>
+          <span class="psc-vl">design</span>
+        </div>
+        <div class="psc-wide">
+          <div class="psc-top">
+            <span class="psc-ghost-num">02</span>
+            <div class="psc-info">
+              <span class="psc-step-lbl">design</span>
+              <p class="psc-desc">smallest intervention. highest leverage.</p>
+            </div>
+          </div>
+          <div class="psc-art">
+            <svg viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- bottom layer -->
+              <path d="M 35 138 L 150 108 L 265 138 L 150 168 Z"
+                fill="rgba(45,31,110,0.22)" stroke="rgba(198,216,255,0.1)" stroke-width="0.8"/>
+              <!-- middle layer -->
+              <path d="M 35 100 L 150 70 L 265 100 L 150 130 Z"
+                fill="rgba(45,31,110,0.38)" stroke="rgba(198,216,255,0.2)" stroke-width="0.8"/>
+              <!-- top layer -->
+              <path d="M 35 62 L 150 32 L 265 62 L 150 92 Z"
+                fill="rgba(45,31,110,0.55)" stroke="rgba(198,216,255,0.36)" stroke-width="1"/>
+              <!-- highlight top edge -->
+              <line x1="35" y1="62" x2="150" y2="32" stroke="rgba(198,216,255,0.55)" stroke-width="0.9"/>
+              <line x1="150" y1="32" x2="265" y2="62" stroke="rgba(198,216,255,0.4)" stroke-width="0.9"/>
+              <!-- corner accents -->
+              <circle cx="150" cy="32" r="3" fill="rgba(198,216,255,0.85)"/>
+              <circle cx="265" cy="62" r="2" fill="rgba(198,216,255,0.45)"/>
+              <circle cx="35"  cy="62" r="1.5" fill="rgba(198,216,255,0.3)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 deploy -->
+      <div class="ps-card" data-index="2">
+        <div class="psc-narrow">
+          <span class="psc-n">03</span>
+          <span class="psc-vl">deploy</span>
+        </div>
+        <div class="psc-wide">
+          <div class="psc-top">
+            <span class="psc-ghost-num">03</span>
+            <div class="psc-info">
+              <span class="psc-step-lbl">deploy</span>
+              <p class="psc-desc">built and integrated into your stack.</p>
+            </div>
+          </div>
+          <div class="psc-art">
+            <svg viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- spokes -->
+              <line x1="150" y1="80" x2="58"  y2="28"  stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <line x1="150" y1="80" x2="242" y2="28"  stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <line x1="150" y1="80" x2="272" y2="95"  stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <line x1="150" y1="80" x2="242" y2="145" stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <line x1="150" y1="80" x2="58"  y2="145" stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <line x1="150" y1="80" x2="28"  y2="95"  stroke="rgba(198,216,255,0.16)" stroke-width="0.8"/>
+              <!-- animated pulses -->
+              <circle r="2.5" fill="rgba(167,139,250,0.85)">
+                <animateMotion dur="2.2s" repeatCount="indefinite" begin="0s"
+                  path="M 150 80 L 58 28"/>
+              </circle>
+              <circle r="2.5" fill="rgba(167,139,250,0.85)">
+                <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.5s"
+                  path="M 150 80 L 242 28"/>
+              </circle>
+              <circle r="2.5" fill="rgba(167,139,250,0.85)">
+                <animateMotion dur="2.0s" repeatCount="indefinite" begin="1s"
+                  path="M 150 80 L 242 145"/>
+              </circle>
+              <!-- outer nodes -->
+              <circle cx="58"  cy="28"  r="11" fill="rgba(255,255,255,0.03)" stroke="rgba(198,216,255,0.18)" stroke-width="0.8"/>
+              <circle cx="242" cy="28"  r="11" fill="rgba(255,255,255,0.03)" stroke="rgba(198,216,255,0.18)" stroke-width="0.8"/>
+              <circle cx="272" cy="95"  r="11" fill="rgba(255,255,255,0.03)" stroke="rgba(198,216,255,0.18)" stroke-width="0.8"/>
+              <circle cx="242" cy="145" r="11" fill="rgba(255,255,255,0.03)" stroke="rgba(198,216,255,0.18)" stroke-width="0.8"/>
+              <circle cx="58"  cy="145" r="11" fill="rgba(255,255,255,0.03)" stroke="rgba(198,216,255,0.18)" stroke-width="0.8"/>
+              <circle cx="28"  cy="95"  r="11" fill="rgba(255,255,255,0.03)" stroke="rgba(198,216,255,0.18)" stroke-width="0.8"/>
+              <!-- center -->
+              <circle cx="150" cy="80" r="22" fill="rgba(45,31,110,0.5)" stroke="rgba(198,216,255,0.32)" stroke-width="1"/>
+              <circle cx="150" cy="80" r="6.5" fill="rgba(198,216,255,0.9)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 compound -->
+      <div class="ps-card" data-index="3">
+        <div class="psc-narrow">
+          <span class="psc-n">04</span>
+          <span class="psc-vl">compound</span>
+        </div>
+        <div class="psc-wide">
+          <div class="psc-top">
+            <span class="psc-ghost-num">04</span>
+            <div class="psc-info">
+              <span class="psc-step-lbl">compound</span>
+              <p class="psc-desc">keeps working without constant input.</p>
+            </div>
+          </div>
+          <div class="psc-art">
+            <svg viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="cg4" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+                  <stop offset="0%"   stop-color="rgba(198,216,255,0.08)"/>
+                  <stop offset="60%"  stop-color="rgba(198,216,255,0.6)"/>
+                  <stop offset="100%" stop-color="rgba(198,216,255,1)"/>
+                </linearGradient>
+              </defs>
+              <!-- faint grid -->
+              <line x1="20" y1="135" x2="282" y2="135" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+              <line x1="20" y1="100" x2="282" y2="100" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+              <line x1="20" y1="65"  x2="282" y2="65"  stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+              <line x1="20" y1="30"  x2="282" y2="30"  stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+              <!-- curve -->
+              <path d="M 20 135 C 75 133, 115 120, 148 100 C 175 82, 200 52, 222 32 C 238 18, 262 13, 282 11"
+                stroke="url(#cg4)" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- dots on curve -->
+              <circle cx="50"  cy="134" r="2.5" fill="rgba(198,216,255,0.35)"/>
+              <circle cx="100" cy="124" r="2.5" fill="rgba(198,216,255,0.5)"/>
+              <circle cx="148" cy="100" r="3"   fill="rgba(198,216,255,0.65)"/>
+              <circle cx="210" cy="40"  r="3.5" fill="rgba(198,216,255,0.85)"/>
+              <!-- glowing tip -->
+              <circle cx="278" cy="12" r="5" fill="white" opacity="0.9">
+                <animate attributeName="r" values="5;7.5;5" dur="2.2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.9;1;0.9" dur="2.2s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /ps-track -->
+
+    <!-- scroll hint -->
+    <div class="ps-scroll-hint">
+      <div class="ps-scroll-icon"><div class="ps-scroll-dot"></div></div>
+      <span>scroll to explore</span>
+    </div>
+
+  </section>
+</div><!-- /process-driver -->
 
 <!-- CTA -->
 <section class="cta-section">

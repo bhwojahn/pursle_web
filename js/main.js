@@ -561,3 +561,37 @@ document.querySelectorAll('.svc-section').forEach(function(section) {
     });
   }, 0.3);
 }());
+
+
+/* ============================================================
+   PROCESS v2 — scroll-driven card expansion
+   ============================================================ */
+(function () {
+  var driver  = document.getElementById('process');
+  if (!driver) return;
+
+  var cards   = driver.querySelectorAll('.ps-card');
+  var dots    = driver.querySelectorAll('.ps-ind-dot');
+  var hint    = driver.querySelector('.ps-scroll-hint');
+  var current = -1;
+
+  function setActive(i) {
+    if (i === current) return;
+    current = i;
+    cards.forEach(function (c, idx) { c.classList.toggle('active', idx === i); });
+    dots.forEach(function  (d, idx) { d.classList.toggle('active', idx === i); });
+  }
+
+  setActive(0); // initialise
+
+  window.addEventListener('scroll', function () {
+    var rect     = driver.getBoundingClientRect();
+    var scrolled = -rect.top;
+    var total    = driver.offsetHeight - window.innerHeight;
+    var progress = Math.max(0, Math.min(1, scrolled / total));
+    var step     = Math.min(3, Math.floor(progress * 4));
+
+    setActive(step);
+    if (hint) hint.classList.toggle('hidden', progress > 0.04);
+  }, { passive: true });
+}());
